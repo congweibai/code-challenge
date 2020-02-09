@@ -1,51 +1,30 @@
-require('./bootstrap')
-
-import Vue from 'vue'
-
 /**
- * Import and setup Inertia.js
- **/
-import { InertiaApp } from '@inertiajs/inertia-vue'
-Vue.use(InertiaApp)
-
-/**
- * Import and setup Vuetify
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
  */
-import Vuetify from 'vuetify'
-import "vuetify/dist/vuetify.min.css";
-import '@mdi/font/css/materialdesignicons.css'
-Vue.use(Vuetify)
 
-const vuetify = new Vuetify({
-    theme: {
-        themes: {
-            light: {
-                primary: '#1b588c',
-                secondary: '#2196f3',
-                accent: '#00bcd4',
-                error: '#f44336',
-                warning: '#ffc107',
-                info: '#03a9f4',
-                success: '#4caf50'
-            }
-        }
-    },
-    icons: {
-        iconfont: 'mdi'
-    }
-})
+require('./bootstrap');
 
-let app = document.getElementById('app')
+window.Vue = require('vue');
 
-new Vue({
-    vuetify,
-    store,
-    render: h => h(InertiaApp, {
-        props: {
-            initialPage: JSON.parse(app.dataset.page),
-            resolveComponent: (name) => {
-                return import(`@/Pages/${name}`).then(module => module.default)
-            },
-        },
-    })
-}).$mount(app);
+/**
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ */
+
+
+Vue.component('searchPage', require('./searchPage.vue').default);
+Vue.component('mymedia', require('./myMedia.vue').default);
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+const app = new Vue({
+    el: '#app',
+});

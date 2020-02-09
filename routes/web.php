@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('searchpage');
+});
+
+Route::get('/mymedia', function () {
+    return view('mymedia');
 });
