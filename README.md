@@ -44,4 +44,4 @@ Please respond to us when you have finished with the link to your repo
 If you get stuck or have a question please feel free to contact us.
 
 ### Demo
-Demo Video: https://mail.google.com/mail/u/0/?ui=2&view=btop&ver=ops2cvpehp6#attid%253Ddrv_1RPpaWYkRKh8-aS1JOS4fXtEz6Xrdnr8E
+Demo Video:
